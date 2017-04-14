@@ -1,5 +1,6 @@
 <?php
 $danhSachSanPham = $data;
+$phantrang = $pagination;
 ?>
 <div class="top_bg">
     <div class="wrap">
@@ -41,7 +42,9 @@ $danhSachSanPham = $data;
                 </div>
                 <?php
             }
+            $phantrang->hienThiPhanTrang();
             ?>
+            
         </div>
     </div>
 </div>

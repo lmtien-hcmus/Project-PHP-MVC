@@ -6,7 +6,7 @@ class products extends Controller {
     function hienThiTatCaSanPham() {
         
         $page = new Pagination();
-        $limit = 2;
+        $limit = 1;
         $page->timTongSoMauTin("ProID", "ProDucts");
         $page->tinhTongSoTrang($limit);
         $start = $page->tinhViTriBatDau($limit);
@@ -14,7 +14,6 @@ class products extends Controller {
         
         $sanPham = new m_Products();
         $danhSachSanPham = $sanPham->docTatCaSanPham($start, $limit);
-
         return $this->View("hienthitatcasanpham", $danhSachSanPham, true, $page);
     }
 

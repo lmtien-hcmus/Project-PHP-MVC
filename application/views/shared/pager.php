@@ -1,10 +1,5 @@
 <?php
-require 'application/libs/Pagination.php';
 
-$pager = new Pagination();
-$tongMauTin = $pager->getTongMauTin();
-$tongSoTrang = $pager->getTongSoTrang();
-$trangHienTai = $pager->getTrangHienTai();
 
 if ($trangHienTai != 1) {
     ?>
