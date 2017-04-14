@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/wamp64/www/MVCProject/application/views/home/index.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/views/products/hienthisanphamtheonhom.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/models/m_products.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/views/products/hienthitatcasanpham.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/libs/Pagination.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/controllers/products.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/libs/Database.php</file>
+            <file>file:/C:/wamp64/www/MVCProject/application/views/shared/pager.php</file>
+        </group>
+    </open-files>
+</project-private>
