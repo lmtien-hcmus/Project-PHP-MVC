@@ -42,9 +42,12 @@ $phantrang = $pagination;
                 </div>
                 <?php
             }
-            $phantrang->hienThiPhanTrang();
             ?>
-            
+            <div class="pagination">
+            <?php
+            $phantrang->hienThiPhanTrang(3);
+            ?>
+            </div>
         </div>
     </div>
 </div>

@@ -5,6 +5,8 @@ class Pagination extends Database {
     private $tongMauTin;
     private $tongSoTrang;
     private $trangHienTai;
+    private $trangDau;
+    private $trangCuoi;
 
     function getTongMauTin() {
         return $this->tongMauTin;
@@ -44,7 +46,9 @@ class Pagination extends Database {
         return 0;
     }
 
-    function hienThiPhanTrang() {
+    function hienThiPhanTrang($soTrangHienThi) {
+        
+        // Xử lý chuỗi trên url
         $fullUrl = $_SERVER['REQUEST_URI'];
         if (strpos($fullUrl, "page") != 0) {
             $queryStringPage = strstr($fullUrl, "page");
@@ -52,36 +56,63 @@ class Pagination extends Database {
         } else {
             $fullUrl .= '&';
         }
-        if ($this->trangHienTai != 1) {
-            ?>
-            <a href="<?php echo $fullUrl; ?>page=1&total=<?php echo $this->tongMauTin; ?>" title="Trang đầu">&nbsp; << &nbsp;</a>
-            <?php
+        
+        // Xử lý hiển thị số trang
+        $middle = ceil($soTrangHienThi / 2);
+        if ($this->tongSoTrang < $soTrangHienThi) {
+            $this->trangDau = 1;
+            $this->trangCuoi = $this->tongSoTrang;
         }
-        if ($this->trangHienTai > 1) {
-            ?>
-            <a href="<?php echo $fullUrl; ?>page=<?php echo (int) $this->trangHienTai - 1; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang trước"> &nbsp; < &nbsp; </a>
-            <?php
-        }
-        for ($i = 1; $i <= 3; $i++) {
-            if ($i == $this->trangHienTai) {
-                echo "<b>$i</b>";
-            
-            } else {
-                ?>
-                <a href="<?php echo $fullUrl; ?>page=<?php echo $i; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang <?php echo $i; ?>"> <?php echo $i; ?> </a>
-                <?php
+        else{
+            $this->trangDau = $this->trangHienTai - $middle + 1;
+            $this->trangCuoi = $this->trangHienTai + $middle - 1;
+            if($this->trangDau < 1){
+                $this->trangDau = 1;
+                $this->trangCuoi = $soTrangHienThi;
+            }
+            else if($this->trangCuoi > $this->tongSoTrang){
+                $this->trangCuoi = $this->tongSoTrang;
+                $this->trangDau = $this->tongSoTrang - $soTrangHienThi + 1;
             }
         }
-        if ($this->trangHienTai + 1 <= $this->tongSoTrang) {
-            ?>
-            <a href="<?php echo $fullUrl; ?>page=<?php echo ($this->trangHienTai + 1); ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang sau"> > </a>
+        ?>
+        <ul>
             <?php
-        }
-        if (($this->trangHienTai != $this->tongSoTrang) && ($this->tongSoTrang != 0)) {
+            if ($this->trangHienTai != 1) {
+                ?>
+                <li><a href="<?php echo $fullUrl; ?>page=1&total=<?php echo $this->tongMauTin; ?>" title="Trang đầu"><<</a></li>
+                <?php
+            }
+            if ($this->trangHienTai > 1) {
+                ?>
+                <li><a href="<?php echo $fullUrl; ?>page=<?php echo (int) $this->trangHienTai - 1; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang trước"><</a></li>
+                <?php
+            }
+            
+            for ($i = $this->trangDau; $i <= $this->trangCuoi; $i++) {
+                if ($i == $this->trangHienTai) {
+                    echo "<li class='curpage'>$i</li>";
+                } else {
+                    ?>
+                    <li><a href="<?php echo $fullUrl; ?>page=<?php echo $i; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang <?php echo $i; ?>"> <?php echo $i; ?> </a></li>
+                    <?php
+                }
+            }
+            
+            if ($this->trangHienTai + 1 <= $this->tongSoTrang) {
+                ?>
+                <li><a href="<?php echo $fullUrl; ?>page=<?php echo ($this->trangHienTai + 1); ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang sau"> > </a></li>
+                <?php
+            }
+            if (($this->trangHienTai != $this->tongSoTrang) && ($this->tongSoTrang != 0)) {
+                ?>
+                <li><a href="<?php echo $fullUrl; ?>page=<?php echo $this->tongSoTrang; ?>&total=<?php echo $this->tongMauTin; ?>" title="trang cuối">>></a></li>
+                <?php
+            }
             ?>
-            <a href="<?php echo $fullUrl; ?>page=<?php echo $this->tongSoTrang; ?>&total=<?php echo $this->tongMauTin; ?>" title="trang cuối">&nbsp; >> &nbsp;</a>
-            <?php
-        }
+        </ul>
+        <?php
     }
 
 }
+?>

@@ -1876,6 +1876,34 @@ span.color7{
     color: #555555;
 }
 /* end tabs */
+
+/*start pagination*/
+.pagination{
+    padding: 10px;
+    text-align: center;
+}
+.pagination ul{
+    display: inline-block;
+    overflow: hidden;
+    
+}
+.pagination ul li{
+    float: left;
+    list-style: none;
+    margin: 3px;
+}
+.pagination li a, .pagination .curpage{
+    background: #fff;
+    color: #0AA5E2;
+    padding: 5px 12px;
+    display: block;
+    border: 1px solid #c1bebe;
+}
+.pagination li.curpage{
+    color: #fff;
+    background: #57C5A0;
+}
+
 /***** Media Quries *****/
 @media only screen and (max-width: 1366px) {
     .wrap{
