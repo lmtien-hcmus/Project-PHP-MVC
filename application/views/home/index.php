@@ -32,34 +32,32 @@ $danhSachSanPhamXemNhieu = array_slice($data, count($data) / 2, count($data));
             </div>
             <!-- start grids_of_3 -->
             <?php
+            $loopRow = 0;
             $i = 0;
-            do {
+            while ($loopRow < ceil(count($danhSachSanPhamMoi) / 3)) {
+                $dieuKienLap = 0;
                 ?>
                 <div class="grids_of_3">
                     <?php
-                    $dieuKienLap = 0;
-                    if ($danhSachSanPhamMoi != NULL) {
-                        while ($dieuKienLap < 3) {
-                            ?>  
-                            <div class="grid1_of_3">
-                                <a href="index.php?con=products&act=docchitietsanpham&id=<?php echo $danhSachSanPhamMoi[$i]->ProID; ?>">
-                                    <img src="public/images/pic6.jpg" alt="">
-                                    <h3><?php echo $danhSachSanPhamMoi[$i]->ProName; ?></h3>
-                                    <span class="price"><?php echo $danhSachSanPhamMoi[$i]->Price; ?></span>
-                                </a>
-                            </div>
-                            <?php
-                            $i++;
-                            $dieuKienLap++;
-                        }
-                    } else {
-                        echo "<h2>Danh mục này chưa có sản phẩm</h2>";
+                    while ($dieuKienLap < 3 && $i < count($danhSachSanPhamMoi)) {
+                        ?>
+                        <div class="grid1_of_3">
+                            <a href="details.html">
+                                <img src="images/pic4.jpg" alt="">
+                                <h3><?php echo $danhSachSanPhamMoi[$i]->ProName; ?></h3>
+                                <span class="price">$145,99</span>
+                            </a>
+                        </div>
+                        <?php
+                        $dieuKienLap++;
+                        $i++;
                     }
+                    $loopRow++;
                     ?>
                     <div class="clear"></div>
                 </div>
                 <?php
-            } while ($i < count($danhSachSanPhamMoi));
+            }
             ?>
 
             <div class="top_main">
@@ -69,34 +67,32 @@ $danhSachSanPhamXemNhieu = array_slice($data, count($data) / 2, count($data));
             </div>
             <!-- start grids_of_3 -->
             <?php
+            $loopRow = 0;
             $i = 0;
-            do {
+            while ($loopRow < ceil(count($danhSachSanPhamXemNhieu) / 3)) {
+                $dieuKienLap = 0;
                 ?>
                 <div class="grids_of_3">
                     <?php
-                    $dieuKienLap = 0;
-                    if ($danhSachSanPhamXemNhieu != NULL) {
-                        while ($dieuKienLap < 3) {
-                            ?>  
-                            <div class="grid1_of_3">
-                                <a href="index.php?con=products&act=docchitietsanpham&id=<?php echo $danhSachSanPhamXemNhieu[$i]->ProID; ?>">
-                                    <img src="public/images/<?php echo $danhSachSanPhamXemNhieu[$i]->Image_thumb; ?>" alt="">
-                                    <h3><?php echo $danhSachSanPhamXemNhieu[$i]->ProName; ?></h3>
-                                    <span class="price"><?php echo $danhSachSanPhamXemNhieu[$i]->Price; ?></span>
-                                </a>
-                            </div>
-                            <?php
-                            $i++;
-                            $dieuKienLap++;
-                        }
-                    } else {
-                        echo "<h2>Danh mục này chưa có sản phẩm</h2>";
+                    while ($dieuKienLap < 3 && $i < count($danhSachSanPhamXemNhieu)) {
+                        ?>
+                        <div class="grid1_of_3">
+                            <a href="details.html">
+                                <img src="images/pic4.jpg" alt="">
+                                <h3><?php echo $danhSachSanPhamXemNhieu[$i]->ProName; ?></h3>
+                                <span class="price">$145,99</span>
+                            </a>
+                        </div>
+                        <?php
+                        $dieuKienLap++;
+                        $i++;
                     }
+                    $loopRow++;
                     ?>
                     <div class="clear"></div>
                 </div>
                 <?php
-            } while ($i < count($danhSachSanPhamXemNhieu));
+            }
             ?>
             <!-- start grids_of_2 -->
             <div class="grids_of_2">

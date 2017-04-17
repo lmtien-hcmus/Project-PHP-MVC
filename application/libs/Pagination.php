@@ -47,7 +47,7 @@ class Pagination extends Database {
     }
 
     function hienThiPhanTrang($soTrangHienThi) {
-        
+
         // Xử lý chuỗi trên url
         $fullUrl = $_SERVER['REQUEST_URI'];
         if (strpos($fullUrl, "page") != 0) {
@@ -56,30 +56,28 @@ class Pagination extends Database {
         } else {
             $fullUrl .= '&';
         }
-        
+
         // Xử lý hiển thị số trang
         $middle = ceil($soTrangHienThi / 2);
         if ($this->tongSoTrang < $soTrangHienThi) {
             $this->trangDau = 1;
             $this->trangCuoi = $this->tongSoTrang;
-        }
-        else{
+        } else {
             $this->trangDau = $this->trangHienTai - $middle + 1;
             $this->trangCuoi = $this->trangHienTai + $middle - 1;
-            if($this->trangDau < 1){
+            if ($this->trangDau < 1) {
                 $this->trangDau = 1;
                 $this->trangCuoi = $soTrangHienThi;
-            }
-            else if($this->trangCuoi > $this->tongSoTrang){
+            } else if ($this->trangCuoi > $this->tongSoTrang) {
                 $this->trangCuoi = $this->tongSoTrang;
                 $this->trangDau = $this->tongSoTrang - $soTrangHienThi + 1;
             }
         }
         ?>
         <ul>
-            <?php
-            if ($this->trangHienTai != 1) {
-                ?>
+        <?php
+        if ($this->trangHienTai != 1) {
+            ?>
                 <li><a href="<?php echo $fullUrl; ?>page=1&total=<?php echo $this->tongMauTin; ?>" title="Trang đầu"><<</a></li>
                 <?php
             }
@@ -88,7 +86,7 @@ class Pagination extends Database {
                 <li><a href="<?php echo $fullUrl; ?>page=<?php echo (int) $this->trangHienTai - 1; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang trước"><</a></li>
                 <?php
             }
-            
+
             for ($i = $this->trangDau; $i <= $this->trangCuoi; $i++) {
                 if ($i == $this->trangHienTai) {
                     echo "<li class='curpage'>$i</li>";
@@ -98,7 +96,7 @@ class Pagination extends Database {
                     <?php
                 }
             }
-            
+
             if ($this->trangHienTai + 1 <= $this->tongSoTrang) {
                 ?>
                 <li><a href="<?php echo $fullUrl; ?>page=<?php echo ($this->trangHienTai + 1); ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang sau"> > </a></li>
@@ -111,8 +109,8 @@ class Pagination extends Database {
             }
             ?>
         </ul>
-        <?php
-    }
+            <?php
+        }
 
-}
-?>
+    }
+    ?>

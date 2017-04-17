@@ -30,7 +30,6 @@ $phantrang = $pagination;
                                 <h3><?php echo $danhSachSanPham[$i]->ProName; ?></h3>
                                 <span class="price">$145,99</span>
                             </a>
-                            <p><?php echo count($danhSachSanPham); ?> + 1</p>
                         </div>
                         <?php
                         $dieuKienLap++;

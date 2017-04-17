@@ -11,9 +11,4 @@ class m_Categories extends Database{
         $result = $this->Select_Row($sql);
         return $result;
     }
-    
-    //admin
-    function themchuyenmuc(){
-        
-    }
 }
