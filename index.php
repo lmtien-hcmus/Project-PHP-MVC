@@ -4,5 +4,5 @@ require 'application/libs/Database.php';
 require 'application/libs/Controller.php';
 require 'application/config/config.php';
 
-$c = new Config;
+$c = new Config();
 $c ->Init();

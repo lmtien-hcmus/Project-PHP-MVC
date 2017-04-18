@@ -1,9 +1,8 @@
 <?php
-
+require 'application/models/m_products.php';
 class home extends Controller
 {  
     function index(){
-        require 'application/models/m_products.php';
         $products = new m_Products();
         $sanphammoi = $products->DocDsSanPhamMoi(6);
         $sanphamxemnhieu = $products->DocDsSanPhamXemNhieu(6);

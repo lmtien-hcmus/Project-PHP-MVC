@@ -3,27 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/products/hienthisanphamtheonhom.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/libs/Init.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/index.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/libs/Pagination.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/views/shared/sidebar.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/config/config.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/controllers/home.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/products/hienthitatcasanpham.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/home/index.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/config/config.php</file>
+            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/public/css/style.css</file>
+            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/views/products/themsanpham.php</file>
+            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/views/home/index.php</file>
             <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/views/shared/header.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/models/m_subcategories.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/views/shared/footer.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/models/m_categories.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/libs/Controller.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/models/m_products.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/index.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/products/hienthisanphamtheoloai.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/libs/Database.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/public/themes/index.html</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/admin/views/shared/counter.php</file>
         </group>
     </open-files>
 </project-private>

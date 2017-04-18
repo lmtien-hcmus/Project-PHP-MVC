@@ -360,23 +360,7 @@
                         </div>
                         <div class="clearfix"> </div>	
                     </div>
-                    <div class="charts">
-                        <div class="col-md-4 charts-grids widget">
-                            <h4 class="title">Bar Chart Example</h4>
-                            <canvas id="bar" height="300" width="400"> </canvas>
-                        </div>
-                        <div class="col-md-4 charts-grids widget states-mdl">
-                            <h4 class="title">Line Chart Example</h4>
-                            <canvas id="line" height="300" width="400"> </canvas>
-                        </div>
-                        <div class="col-md-4 charts-grids widget">
-                            <h4 class="title">Pie Chart Example</h4>
-                            <canvas id="pie" height="300" width="400"> </canvas>
-                        </div>
-                        <div class="clearfix"> </div>
-                        
-
-                    </div>
+                   
                     <div class="row">
                         <div class="col-md-4 stats-info widget">
                             <div class="stats-title">
@@ -598,40 +582,4 @@
                         </div>
                     </div>
                     <div class="clearfix"> </div>
-                </div>
-            </div>
-            <!--footer-->
-            <div class="footer">
-                <p>&copy; 2016 Novus Admin Panel. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p>
-            </div>
-            <!--//footer-->
-        </div>
-        <!-- Classie -->
-        <script src="js/classie.js"></script>
-        <script>
-            var menuLeft = document.getElementById('cbp-spmenu-s1'),
-                    showLeftPush = document.getElementById('showLeftPush'),
-                    body = document.body;
-
-            showLeftPush.onclick = function () {
-                classie.toggle(this, 'active');
-                classie.toggle(body, 'cbp-spmenu-push-toright');
-                classie.toggle(menuLeft, 'cbp-spmenu-open');
-                disableOther('showLeftPush');
-            };
-
-
-            function disableOther(button) {
-                if (button !== 'showLeftPush') {
-                    classie.toggle(showLeftPush, 'disabled');
-                }
-            }
-        </script>
-        <!--scrolling js-->
-        <script src="js/jquery.nicescroll.js"></script>
-        <script src="js/scripts.js"></script>
-        <!--//scrolling js-->
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.js"></script>
-    </body>
-</html>
+                

@@ -8,46 +8,48 @@
               SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!-- Bootstrap Core CSS -->
-        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+        <link href="public/css/bootstrap.css" rel='stylesheet' type='text/css' />
         <!-- Custom CSS -->
-        <link href="css/style.css" rel='stylesheet' type='text/css' />
+        <link href="public/css/style.css" rel='stylesheet' type='text/css' />
         <!-- font CSS -->
         <!-- font-awesome icons -->
-        <link href="css/font-awesome.css" rel="stylesheet"> 
+        <link href="public/css/font-awesome.css" rel="stylesheet"> 
         <!-- //font-awesome icons -->
         <!-- js-->
-        <script src="js/jquery-1.11.1.min.js"></script>
-        <script src="js/modernizr.custom.js"></script>
+        <script src="public/js/jquery-1.11.1.min.js"></script>
+        <script src="public/js/modernizr.custom.js"></script>
         <!--webfonts-->
-        <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link href='///fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <!--//webfonts--> 
         <!--animate-->
-        <link href="css/animate.css" rel="stylesheet" type="text/css" media="all">
-        <script src="js/wow.min.js"></script>
+        <link href="public/css/animate.css" rel="stylesheet" type="text/css" media="all">
+        <script src="public/js/wow.min.js"></script>
         <script>
             new WOW().init();
         </script>
         <!--//end-animate-->
         <!-- chart -->
-        <script src="js/Chart.js"></script>
+        <script src="public/js/Chart.js"></script>
         <!-- //chart -->
         <!--Calender-->
-        <link rel="stylesheet" href="css/clndr.css" type="text/css" />
-        <script src="js/underscore-min.js" type="text/javascript"></script>
-        <script src= "js/moment-2.2.1.js" type="text/javascript"></script>
-        <script src="js/clndr.js" type="text/javascript"></script>
-        <script src="js/site.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="public/css/clndr.css" type="text/css" />
+        <script src="public/js/underscore-min.js" type="text/javascript"></script>
+        <script src= "public/js/moment-2.2.1.js" type="text/javascript"></script>
+        
         <!--End Calender-->
         <!-- Metis Menu -->
-        <script src="js/metisMenu.min.js"></script>
-        <script src="js/custom.js"></script>
-        <link href="css/custom.css" rel="stylesheet">
+        <script src="public/js/metisMenu.min.js"></script>
+        <script src="public/js/custom.js"></script>
+        <link href="public/css/custom.css" rel="stylesheet">
         <!--//Metis Menu -->
     </head> 
     <body class="cbp-spmenu-push">
         <div class="main-content">
             <!--left-fixed -navigation-->
-            
+            <?php 
+                include 'views/shared/sidebar.php';
+            ?>
+            <!--left-fixed -navigation-->
             <!-- header-starts -->
             <div class="sticky-header header-section ">
                 <div class="header-left">
@@ -238,40 +240,11 @@
                 </div>
                 <div class="clearfix"> </div>	
             </div>
+            <!-- //header-ends -->
             <!-- main content start-->
             <div id="page-wrapper">
                 <div class="main-page">
-                    <div class="row-one">
-                        <div class="col-md-4 widget">
-                            <div class="stats-left ">
-                                <h5>Today</h5>
-                                <h4>Sales</h4>
-                            </div>
-                            <div class="stats-right">
-                                <label> 45</label>
-                            </div>
-                            <div class="clearfix"> </div>	
-                        </div>
-                        <div class="col-md-4 widget states-mdl">
-                            <div class="stats-left">
-                                <h5>Today</h5>
-                                <h4>Visitors</h4>
-                            </div>
-                            <div class="stats-right">
-                                <label> 80</label>
-                            </div>
-                            <div class="clearfix"> </div>	
-                        </div>
-                        <div class="col-md-4 widget states-last">
-                            <div class="stats-left">
-                                <h5>Today</h5>
-                                <h4>Orders</h4>
-                            </div>
-                            <div class="stats-right">
-                                <label>51</label>
-                            </div>
-                            <div class="clearfix"> </div>	
-                        </div>
-                        <div class="clearfix"> </div>	
-                    </div>
-                    
+                    <?php 
+                        include 'views/shared/counter.php';
+                    ?>
+                    <div class="row">

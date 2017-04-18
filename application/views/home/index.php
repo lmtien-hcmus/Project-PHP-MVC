@@ -40,6 +40,7 @@ $danhSachSanPhamXemNhieu = array_slice($data, count($data) / 2, count($data));
                 <div class="grids_of_3">
                     <?php
                     while ($dieuKienLap < 3 && $i < count($danhSachSanPhamMoi)) {
+                        
                         ?>
                         <div class="grid1_of_3">
                             <a href="details.html">
@@ -49,6 +50,7 @@ $danhSachSanPhamXemNhieu = array_slice($data, count($data) / 2, count($data));
                             </a>
                         </div>
                         <?php
+                        
                         $dieuKienLap++;
                         $i++;
                     }
