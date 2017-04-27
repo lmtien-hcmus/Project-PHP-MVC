@@ -18,6 +18,7 @@
         <!-- js-->
         <script src="public/js/jquery-1.11.1.min.js"></script>
         <script src="public/js/modernizr.custom.js"></script>
+        <script src="public/js/jquery.validate.min.js" type="text/javascript"></script>
         <!--webfonts-->
         <link href='///fonts.googleapis.com/css?family=Roboto+Condensed:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <!--//webfonts--> 
@@ -89,7 +90,7 @@
                                         </div>
                                     </li>
                                     <li><a href="#">
-                                            <div class="user_img"><img src="images/1.png" alt=""></div>
+                                            <div class="user_img"><img src="public/images/1.png" alt=""></div>
                                             <div class="notification_desc">
                                                 <p>Lorem ipsum dolor amet</p>
                                                 <p><span>1 hour ago</span></p>
@@ -97,7 +98,7 @@
                                             <div class="clearfix"></div>	
                                         </a></li>
                                     <li class="odd"><a href="#">
-                                            <div class="user_img"><img src="images/2.png" alt=""></div>
+                                            <div class="user_img"><img src="public/images/2.png" alt=""></div>
                                             <div class="notification_desc">
                                                 <p>Lorem ipsum dolor amet </p>
                                                 <p><span>1 hour ago</span></p>
@@ -105,7 +106,7 @@
                                             <div class="clearfix"></div>	
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user_img"><img src="images/3.png" alt=""></div>
+                                            <div class="user_img"><img src="public/images/3.png" alt=""></div>
                                             <div class="notification_desc">
                                                 <p>Lorem ipsum dolor amet </p>
                                                 <p><span>1 hour ago</span></p>
@@ -128,7 +129,7 @@
                                         </div>
                                     </li>
                                     <li><a href="#">
-                                            <div class="user_img"><img src="images/2.png" alt=""></div>
+                                            <div class="user_img"><img src="public/images/2.png" alt=""></div>
                                             <div class="notification_desc">
                                                 <p>Lorem ipsum dolor amet</p>
                                                 <p><span>1 hour ago</span></p>
@@ -136,7 +137,7 @@
                                             <div class="clearfix"></div>	
                                         </a></li>
                                     <li class="odd"><a href="#">
-                                            <div class="user_img"><img src="images/1.png" alt=""></div>
+                                            <div class="user_img"><img src="public/images/1.png" alt=""></div>
                                             <div class="notification_desc">
                                                 <p>Lorem ipsum dolor amet </p>
                                                 <p><span>1 hour ago</span></p>
@@ -144,7 +145,7 @@
                                             <div class="clearfix"></div>	
                                         </a></li>
                                     <li><a href="#">
-                                            <div class="user_img"><img src="images/3.png" alt=""></div>
+                                            <div class="user_img"><img src="public/images/3.png" alt=""></div>
                                             <div class="notification_desc">
                                                 <p>Lorem ipsum dolor amet </p>
                                                 <p><span>1 hour ago</span></p>
@@ -218,7 +219,7 @@
                             <li class="dropdown profile_details_drop">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     <div class="profile_img">	
-                                        <span class="prfil-img"><img src="images/a.png" alt=""> </span> 
+                                        <span class="prfil-img"><img src="public/images/a.png" alt=""> </span> 
                                         <div class="user-name">
                                             <p>Wikolia</p>
                                             <span>Administrator</span>

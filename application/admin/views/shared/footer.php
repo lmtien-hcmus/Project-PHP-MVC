@@ -33,5 +33,6 @@
 	<!--//scrolling js-->
 	<!-- Bootstrap Core JavaScript -->
    <script src="public/js/bootstrap.js"> </script>
+   
 </body>
 </html>

@@ -3985,6 +3985,11 @@ h4.title3 {
 }
 }
 /*--//responsive-design---*/
-.noidung{
-    height: 100px;
+.textarea-addpro{
+    height: 220px;
+}
+.button-style{
+    padding: 7px 20px;
+    font-size: 17px;
+    margin-right: 5px;
 }
