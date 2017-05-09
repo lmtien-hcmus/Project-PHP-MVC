@@ -466,7 +466,7 @@ h4.style{
     float:left;
     width:30.3333%;
     margin-left:4.3333%;
-        
+
     background: #ffffff;
     position: relative;
 }
@@ -485,24 +485,37 @@ h4.style{
 }
 .grid1_of_3 img{
     padding: 8% 0;
+    width: 186px;
+    height: 267px;
+    overflow: hidden;
 }
 .grid1_of_3 h3{
     border-top: 1px solid #EBEBEB;
-    padding: 15px;
+    line-height: 40px;
     font-size: 1.2em;
     color: #000000;
     -webkit-text-stroke: 0.2px;
     text-shadow: 0 1px 0 #ffffff;
     text-transform: capitalize;
+    height: 40px;
+    margin-left: 115px;
+    padding-right: 5px;
+    z-index: 999;
+    overflow: hidden;
 }
 .price{
     background: #57C5A0;
     color: #ffffff;
     font-size: 0.8725em;
-    padding: 25px 12px;
+    padding-bottom: 9px;
+    padding-top: 11px;
+    padding-left: 12px;
+    padding-right: 15px;
     position: absolute;
     bottom: 0px;
     left: 10px;
+    width: 75px;
+    overflow: hidden;
 }
 .price1{
     font-size: 0.8725em;
@@ -1605,13 +1618,15 @@ span.color7{
 }
 .desc1 h5{
     margin-top: 2%;
-    font-size: 1.8em;
-    color: #5DAA90;
+    font-size: 1.6em;
+    color: #f15b29;
     line-height: 1.5em;
     -webkit-text-stroke: 0.2px;
 }
 .desc1 h5 span{
     text-decoration:line-through;
+    font-size: .6em;
+    color: #333;
 }
 .desc1 h5 a{
     margin-left:5px;
@@ -1885,7 +1900,7 @@ span.color7{
 .pagination ul{
     display: inline-block;
     overflow: hidden;
-    
+
 }
 .pagination ul li{
     float: left;

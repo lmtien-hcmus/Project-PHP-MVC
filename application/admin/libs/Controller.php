@@ -1,11 +1,11 @@
 <?php
 class Controller {
 
-    public $title;
-    public $init;
+    public $title, $init, $content;
     public function __construct() {
         $this->title = "";
         $this->init = new InitDefaul();
+        $this->content = '';
     }
 
     function View($viewname, $data = null, $layout = true, $pagination = null) {
@@ -24,6 +24,7 @@ class Controller {
         if ($layout) {
             require("{$this->init->view_path}/shared/footer.php");
         }
+        return $this->content;
     }
     function set_title_page($_title){
         $this->title = $_title;

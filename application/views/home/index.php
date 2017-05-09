@@ -43,10 +43,10 @@ $danhSachSanPhamXemNhieu = array_slice($data, count($data) / 2, count($data));
                         
                         ?>
                         <div class="grid1_of_3">
-                            <a href="details.html">
-                                <img src="images/pic4.jpg" alt="">
+                            <a href="index.php?con=products&act=hienThiChiTietSanPham&proId=<?php echo $danhSachSanPhamMoi[$i]->ProID ;?>">
+                                <img src="public/images/products/thumbs/<?php echo $danhSachSanPhamMoi[$i]->Image_thumb ;?>" alt="">
                                 <h3><?php echo $danhSachSanPhamMoi[$i]->ProName; ?></h3>
-                                <span class="price">$145,99</span>
+                                <span class="price"><?php echo number_format($danhSachSanPhamMoi[$i]->Price) . ' VNĐ'; ?></span>
                             </a>
                         </div>
                         <?php
@@ -79,10 +79,10 @@ $danhSachSanPhamXemNhieu = array_slice($data, count($data) / 2, count($data));
                     while ($dieuKienLap < 3 && $i < count($danhSachSanPhamXemNhieu)) {
                         ?>
                         <div class="grid1_of_3">
-                            <a href="details.html">
-                                <img src="images/pic4.jpg" alt="">
+                            <a href="index.php?con=products&act=hienThiChiTietSanPham&proId=<?php echo $danhSachSanPhamXemNhieu[$i]->ProID ;?>">
+                                <img src="public/images/products/thumbs/<?php echo $danhSachSanPhamXemNhieu[$i]->Image_thumb ;?>" alt="">
                                 <h3><?php echo $danhSachSanPhamXemNhieu[$i]->ProName; ?></h3>
-                                <span class="price">$145,99</span>
+                                <span class="price"><?php echo number_format($danhSachSanPhamXemNhieu[$i]->Price) . ' VNĐ'; ?></span>
                             </a>
                         </div>
                         <?php

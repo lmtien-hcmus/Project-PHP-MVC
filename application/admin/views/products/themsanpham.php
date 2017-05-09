@@ -6,7 +6,7 @@ $danhSachCategories = $categories->xuatTatCaChuyenMuc();
 <h3 class="title1">Thêm sản phẩm</h3>
 <div class="form-three widget-shadow">
     <?php
-    if (isset($inserted_id)) {
+    if ($this->content !== '') {
         ?>
         <div class = "alert alert-success alert-dismissible" role = "alert">
         <button type = "button" class = "close" data-dismiss = "alert" aria-label = "Close"><span aria-hidden = "true">&times;

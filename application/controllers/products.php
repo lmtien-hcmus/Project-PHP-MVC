@@ -2,7 +2,8 @@
 require 'application/models/m_products.php';
 require 'application/libs/Pagination.php';
 class products extends Controller {
-
+    public $sanPham;
+            
     function hienThiTatCaSanPham() {
         
         $page = new Pagination();
@@ -12,8 +13,8 @@ class products extends Controller {
         $start = $page->tinhViTriBatDau($limit);
         $page->setTrangHienTai(($start/$limit)+1);
         
-        $sanPham = new m_Products();
-        $danhSachSanPham = $sanPham->docTatCaSanPham($start, $limit);
+        
+        $danhSachSanPham = $this->sanPham->docTatCaSanPham($start, $limit);
         return $this->View("hienthitatcasanpham", $danhSachSanPham, true, $page);
     }
 
@@ -21,8 +22,7 @@ class products extends Controller {
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
         }
-        $sp = new m_Products();
-        $dssanpham = $sp->docSanPhamTheoLoai($id);
+        $dssanpham = $this->sanPham->docSanPhamTheoLoai($id);
         return $this->View("hienthisanphamtheoloai", $dssanpham);
     }
 
@@ -30,18 +30,23 @@ class products extends Controller {
         if (isset($_GET["id"])) {
             $id = $_GET["id"];
         }
-        $sp = new m_Products();
-        $dssanpham = $sp->docSanPhamTheoNhom($id);
+        $dssanpham = $this->sanPham->docSanPhamTheoNhom($id);
         return $this->View("hienthisanphamtheonhom", $dssanpham);
     }
 
     function hienThiChiTietSanPham() {
-        if (isset($_GET["id"])) {
-            $id = $_GET["id"];
+        if (isset($_GET["proId"])) {
+            $id = $_GET["proId"];
         }
-        $sp = new m_Products();
-        $detail = $sp->docSanPhamTheoID($id);
+        $this->sanPham = new m_Products();
+        $detail = $this->sanPham->docSanPhamTheoID($id);
         return $this->View("hienthichitietsanpham", $detail);
+    }
+    function hienThiSanPhamCungLoai($id){
+        
+    }
+    function hienThiSanPhamCungNhom($id){
+        
     }
 
 }

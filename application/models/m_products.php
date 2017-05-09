@@ -15,17 +15,23 @@ class m_Products extends Database{
         return count($this->SelectAll($sql));
     }
     
-    function docSanPhamTheoLoai($id, $start = -1, $limit = -1){       
+    function docSanPhamTheoLoai($id, $start = -1, $limit = -1, $random = false){       
         $sql = "SELECT Products.*, Categories.CatID FROM Products, Categories, SubCategories WHERE products.SubCatID = subcategories.SubCatID AND subcategories.CatID = categories.CatID AND categories.CatID = $id";
         if($start >= 0 && $limit > 0){
             $sql .= "LIMIT $start, $limit";
         }
+        if($random == true){
+            $sql .= " RAND()";
+        }
         return $this->SelectAll($sql); 
     }
-    function docSanPhamTheoNhom($id, $start = -1, $limit = -1){
+    function docSanPhamTheoNhom($id, $start = -1, $limit = -1, $random = false){
         $sql = "SELECT * FROM Products, SubCategories WHERE Products.SubCatID = SubCategories.SubCatID AND subcategories.SubCatID = $id";
         if($start >= 0 && $limit > 0){
             $sql .= "LIMIT $start, $limit";
+        }
+        if($random == true){
+            $sql .= " RAND()";
         }
         return $this->SelectAll($sql);
     }

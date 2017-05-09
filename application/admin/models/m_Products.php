@@ -5,7 +5,6 @@ class m_Products extends Database {
     public $tenSanPham, $moTa, $noiDung, $loaiSanPham, $nhomSanPham, $giaTien, 
            $giaKhuyenMai, $tenAnhDaiDien, $danhSachAnh, $link ;
     function __construct() {
-        $this->tenSanPham = '';
         $this->moTa = '';
         $this->noiDung = '';
         $this->loaiSanPham = '';

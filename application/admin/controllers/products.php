@@ -6,19 +6,20 @@ require '../libs/Library.php';
 
 class Products extends Controller {
 
+    public $sanPham;
+
     function themSanPham() {
+        $this->sanPham = new m_Products();
         $libs = new Libarary();
         $image = new HandleImages();
-        $sanPham = new m_Products();
         if (isset($_POST["btnThemSanPham"])) {
-
-            $sanPham->tenSanPham = $_POST["tenSanPham"];
-            $sanPham->moTa = $_POST["moTaSanPham"];
-            $sanPham->nhomSanPham = $_POST["nhomSanPham"];
-            $sanPham->giaTien = $_POST["giaTien"];
-            $sanPham->giaKhuyenMai = $_POST["giaKhuyenMai"];
-            $sanPham->tenAnhDaiDien = $_FILES['anhDaiDien']['name'];
-            $sanPham->noiDung = $_POST["noiDungSanPham"];
+            $this->sanPham->tenSanPham = $_POST["tenSanPham"];
+            $this->sanPham->moTa = $_POST["moTaSanPham"];
+            $this->sanPham->nhomSanPham = $_POST["nhomSanPham"];
+            $this->sanPham->giaTien = $_POST["giaTien"];
+            $this->sanPham->giaKhuyenMai = $_POST["giaKhuyenMai"];
+            $this->sanPham->tenAnhDaiDien = $_FILES['anhDaiDien']['name'];
+            $this->sanPham->noiDung = $_POST["noiDungSanPham"];
 
             // START Xử lý upload danh sách ảnh sản phẩm
             foreach ($_FILES['danhSachAnh']['name'] as $name => $value) {
@@ -40,27 +41,29 @@ class Products extends Controller {
                 $image->resize(85, 100);
                 $image->save("../../public/images/products/small/" . $name_img_products);
 
-                $sanPham->danhSachAnh .= $name_img_products . ',';
+                $this->sanPham->danhSachAnh .= $name_img_products . '|';
             }
             // END Xử lý upload danh sách ảnh sản phẩm
+            // 
             //START Xử lý upload ảnh đại diện
             $dem = 1;
-            $baseName_products_thumb = pathinfo($sanPham->tenAnhDaiDien, PATHINFO_FILENAME);
-            $extension_products_thumb = pathinfo($sanPham->tenAnhDaiDien, PATHINFO_EXTENSION);
-            while (file_exists("../../public/images/products/thumbs/" . $sanPham->tenAnhDaiDien)) {
-                $sanPham->tenAnhDaiDien = $baseName_products_thumb . '_' . $dem . '.' . $extension_products_thumb;
+            $baseName_products_thumb = pathinfo($this->sanPham->tenAnhDaiDien, PATHINFO_FILENAME);
+            $extension_products_thumb = pathinfo($this->sanPham->tenAnhDaiDien, PATHINFO_EXTENSION);
+            while (file_exists("../../public/images/products/thumbs/" . $this->sanPham->tenAnhDaiDien)) {
+                $this->sanPham->tenAnhDaiDien = $baseName_products_thumb . '_' . $dem . '.' . $extension_products_thumb;
                 $dem++;
             }
-            move_uploaded_file($_FILES['anhDaiDien']['tmp_name'], '../../public/images/products/thumbs/' . $sanPham->tenAnhDaiDien);
+            move_uploaded_file($_FILES['anhDaiDien']['tmp_name'], '../../public/images/products/thumbs/' . $this->sanPham->tenAnhDaiDien);
             //END Xử lý upload ảnh đại diện
             //START thêm vào Database
-            $sanPham->danhSachAnh = rtrim($sanPham->danhSachAnh, ',');
+            $this->sanPham->danhSachAnh = rtrim($this->sanPham->danhSachAnh, '|');
             date_default_timezone_set('Asia/Ho_Chi_Minh');
-            $sanPham->link = $libs->convert_string_to_link($sanPham->tenSanPham) . '-' . date('Y-m-d-His');
-            $inserted_id = $sanPham->themSanPham();
+            $this->sanPham->link = $libs->convert_string_to_link($this->sanPham->tenSanPham) . '-' . date('Y-m-d-His');
+            $inserted_id = $this->sanPham->themSanPham();
+            $this->content = $inserted_id;
         }
 
-        return $this->View("themSanPham");
+        return $this->View("themsanpham");
     }
 
 }
