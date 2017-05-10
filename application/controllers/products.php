@@ -43,10 +43,13 @@ class products extends Controller {
         return $this->View("hienthichitietsanpham", $detail);
     }
     function hienThiSanPhamCungLoai($id){
-        
+        $this->sanPham = new m_Products();
+        $sanPhamCungLoai = $this->sanPham->docSanPhamTheoLoai($id, 0, 5, true);
+        return $sanPhamCungLoai;
     }
     function hienThiSanPhamCungNhom($id){
-        
+        $this->sanPham = new m_Products();
+        $sanPhamCungNhom = $this->sanPham->docSanPhamTheoNhom($id, 0, 5, true);
+        return $sanPhamCungNhom;
     }
-
 }

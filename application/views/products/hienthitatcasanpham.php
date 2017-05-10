@@ -1,6 +1,7 @@
 <?php
 $danhSachSanPham = $data;
 $phantrang = $pagination;
+var_dump($this->modelPartial);
 ?>
 <div class="top_bg">
     <div class="wrap">

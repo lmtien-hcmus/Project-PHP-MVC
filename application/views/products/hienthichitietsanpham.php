@@ -2,6 +2,8 @@
 if ($data) {
     $chiTietSanPham = $data;
     $danhSachTenAnh = explode('|', $chiTietSanPham->Images_list);
+    $sanPhamCungNhom = $this->hienThiSanPhamCungNhom($chiTietSanPham->SubCatID);
+    $sanPhamCungLoai = $this->hienThiSanPhamCungLoai($chiTietSanPham->SubCatID);
 }
 ?>
 <div class="top_bg">
@@ -210,73 +212,61 @@ Chiều: 1:00 – 5:00<br/>
                 <div class="left_sidebar">
 
                     <h4>Sản phẩm cùng nhóm</h4>
+                    <?php
+                    foreach ($sanPhamCungNhom as $sanPham) {
+                        $tenAnhDaiDien = explode('|', $sanPham->Images_list);
+                        ?>
                     <div class="left_products">
-                        <div class="left_img">
-                            <img src="public/images/det_pic1.jpg" alt=""/>
-                        </div>
-                        <div class="left_text">
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></p>
-                            <span class="line">$72.00</span>
-                            <span>$52.00</span>
-                        </div>
-                        <div class="clear"></div>
+                    <div class="left_img">
+                        <img src="public/images/products/small/<?php echo $tenAnhDaiDien[0];?>" alt=""/>
                     </div>
-                    <div class="left_products">
-                        <div class="left_img">
-                            <img src="public/images/det_pic2.jpg" alt=""/>
-                        </div>
-                        <div class="left_text">
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></p>
-                            <span class="line">$86.00</span>
-                            <span>$83.00</span>
-                        </div>
-                        <div class="clear"></div>
+                    <div class="left_text">
+                        <p><a href="#"><?php echo $sanPham->ProName ;?></a></p>
+                        <?php
+                            if($sanPham->Promotion !== 0)
+                            {
+                                ?>
+                                <span class="line"><?php echo number_format($chiTietSanPham->Promotion, 0, '.', '.'); ?> VNĐ</span>
+                        <?php
+                            }
+                        ?>
+                        
+                        <span><?php echo number_format($chiTietSanPham->Price, 0, '.', '.'); ?> VNĐ</span>
                     </div>
-                    <div class="left_products">
-                        <div class="left_img">
-                            <img src="public/images/det_pic1.jpg" alt=""/>
-                        </div>
-                        <div class="left_text">
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></p>
-                            <span class="line">$76.00</span>
-                            <span>$75.00</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                    <div class="clear"></div>
+                </div>
+                    <?php
+                    }
+                    ?>
+                    
+                    
                     <h4>Sản phẩm cùng loại</h4>
+                    <?php
+                    foreach ($sanPhamCungLoai as $sanPham) {
+                        $tenAnhDaiDien = explode('|', $sanPham->Images_list);
+                        ?>
                     <div class="left_products">
-                        <div class="left_img">
-                            <img src="public/images/det_pic1.jpg" alt=""/>
-                        </div>
-                        <div class="left_text">
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></p>
-                            <span class="line">$72.00</span>
-                            <span>$52.00</span>
-                        </div>
-                        <div class="clear"></div>
+                    <div class="left_img">
+                        <img src="public/images/products/small/<?php echo $tenAnhDaiDien[0];?>" alt=""/>
                     </div>
-                    <div class="left_products">
-                        <div class="left_img">
-                            <img src="public/images/det_pic2.jpg" alt=""/>
-                        </div>
-                        <div class="left_text">
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></p>
-                            <span class="line">$86.00</span>
-                            <span>$83.00</span>
-                        </div>
-                        <div class="clear"></div>
+                    <div class="left_text">
+                        <p><a href="#"><?php echo $sanPham->ProName ;?></a></p>
+                        <?php
+                            if($sanPham->Promotion !== '0')
+                            {
+                                ?>
+                                <span class="line"><?php echo number_format($sanPham->Promotion, 0, '.', '.'); ?></span>
+                        <?php
+                            }
+                        ?>
+                        
+                        <span><?php echo number_format($sanPham->Price, 0, '.', '.'); ?> VNĐ</span>
                     </div>
-                    <div class="left_products">
-                        <div class="left_img">
-                            <img src="public/images/det_pic1.jpg" alt=""/>
-                        </div>
-                        <div class="left_text">
-                            <p><a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit</a></p>
-                            <span class="line">$76.00</span>
-                            <span>$75.00</span>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
+                    <div class="clear"></div>
+                </div>
+                    <?php
+                    }
+                    ?>
                 </div>
                 <div class="clear"></div>
             </div>	
@@ -284,7 +274,3 @@ Chiều: 1:00 – 5:00<br/>
         </div>
     </div>
 </div>
-
-<?php
-    echo count($danhSachTenAnh);
-?>
