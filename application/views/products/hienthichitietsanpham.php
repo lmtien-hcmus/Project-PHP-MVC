@@ -104,7 +104,7 @@ if ($data) {
                         <div class="desc1">
                             <h3><?php echo $chiTietSanPham->ProName; ?></h3>
                             <?php
-                            if ($chiTietSanPham->Promotion == 0) {
+                            if ($chiTietSanPham->Promotion == '0') {
                                 ?>
                                 <h5> <?php echo number_format($chiTietSanPham->Price, 0, '.', '.'); ?> VNĐ</h5>
                                 <?php
@@ -223,15 +223,15 @@ Chiều: 1:00 – 5:00<br/>
                     <div class="left_text">
                         <p><a href="#"><?php echo $sanPham->ProName ;?></a></p>
                         <?php
-                            if($sanPham->Promotion !== 0)
+                            if($sanPham->Promotion !== '0')
                             {
                                 ?>
-                                <span class="line"><?php echo number_format($chiTietSanPham->Promotion, 0, '.', '.'); ?> VNĐ</span>
+                                <span class="line"><?php echo number_format($sanPham->Promotion, 0, '.', '.'); ?> VNĐ</span>
                         <?php
                             }
                         ?>
                         
-                        <span><?php echo number_format($chiTietSanPham->Price, 0, '.', '.'); ?> VNĐ</span>
+                        <span><?php echo number_format($sanPham->Price, 0, '.', '.'); ?> VNĐ</span>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -250,7 +250,7 @@ Chiều: 1:00 – 5:00<br/>
                         <img src="public/images/products/small/<?php echo $tenAnhDaiDien[0];?>" alt=""/>
                     </div>
                     <div class="left_text">
-                        <p><a href="#"><?php echo $sanPham->ProName ;?></a></p>
+                        <p><a href="index.php?con=products&act=hienthichitietsanpham&proId=<?php echo $sanPham->ProID ;?>"><?php echo $sanPham->ProName ;?></a></p>
                         <?php
                             if($sanPham->Promotion !== '0')
                             {

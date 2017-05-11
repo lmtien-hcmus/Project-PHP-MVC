@@ -24,13 +24,19 @@ class Pagination extends Database {
         $this->trangHienTai = $trang;
     }
 
-    function timTongSoMauTin($key, $table) {
+    function timTongSoMauTin($key, $table, $where = -1) {
         if (isset($_GET["total"])) {
             $this->tongMauTin = $_GET["total"];
         } else {
             $sql = "SELECT $key FROM $table";
-            $result = $this->SelectAll($sql);
+            if($where != -1){
+                $sql .= " WHERE $where";
+            }
+            $result = $this->SelectAll($sql);           
             $this->tongMauTin = count($result);
+            if($result == null){
+                $this->tongMauTin = 0;
+            }
         }
     }
 
@@ -78,12 +84,12 @@ class Pagination extends Database {
         <?php
         if ($this->trangHienTai != 1) {
             ?>
-                <li><a href="<?php echo $fullUrl; ?>page=1&total=<?php echo $this->tongMauTin; ?>" title="Trang đầu"><<</a></li>
+                <li><a href="<?php echo $fullUrl; ?>page=1&total=<?php echo $this->tongMauTin; ?>#products" title="Trang đầu"><<</a></li>
                 <?php
             }
             if ($this->trangHienTai > 1) {
                 ?>
-                <li><a href="<?php echo $fullUrl; ?>page=<?php echo (int) $this->trangHienTai - 1; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang trước"><</a></li>
+                <li><a href="<?php echo $fullUrl; ?>page=<?php echo (int) $this->trangHienTai - 1; ?>&total=<?php echo $this->tongMauTin; ?>#products" title="Trang trước"><</a></li>
                 <?php
             }
 
@@ -92,19 +98,19 @@ class Pagination extends Database {
                     echo "<li class='curpage'>$i</li>";
                 } else {
                     ?>
-                    <li><a href="<?php echo $fullUrl; ?>page=<?php echo $i; ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang <?php echo $i; ?>"> <?php echo $i; ?> </a></li>
+                    <li><a href="<?php echo $fullUrl; ?>page=<?php echo $i; ?>&total=<?php echo $this->tongMauTin; ?>#products" title="Trang <?php echo $i; ?>"> <?php echo $i; ?> </a></li>
                     <?php
                 }
             }
 
             if ($this->trangHienTai + 1 <= $this->tongSoTrang) {
                 ?>
-                <li><a href="<?php echo $fullUrl; ?>page=<?php echo ($this->trangHienTai + 1); ?>&total=<?php echo $this->tongMauTin; ?>" title="Trang sau"> > </a></li>
+                <li><a href="<?php echo $fullUrl; ?>page=<?php echo ($this->trangHienTai + 1); ?>&total=<?php echo $this->tongMauTin; ?>#products" title="Trang sau"> > </a></li>
                 <?php
             }
             if (($this->trangHienTai != $this->tongSoTrang) && ($this->tongSoTrang != 0)) {
                 ?>
-                <li><a href="<?php echo $fullUrl; ?>page=<?php echo $this->tongSoTrang; ?>&total=<?php echo $this->tongMauTin; ?>" title="trang cuối">>></a></li>
+                <li><a href="<?php echo $fullUrl; ?>page=<?php echo $this->tongSoTrang; ?>&total=<?php echo $this->tongMauTin; ?>#products" title="trang cuối">>></a></li>
                 <?php
             }
             ?>

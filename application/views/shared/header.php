@@ -69,9 +69,9 @@
                     </div>
                     <div class="log_reg">
                         <ul>
-                            <li><a href="login.html">Login</a> </li>
+                            <li><a href="index.php?con=user&act=login">Login</a> </li>
                             <span class="log"> or </span>
-                            <li><a href="register.html">Register</a> </li>								   
+                            <li><a href="index.php?con=user&act=login">Register</a> </li>								   
                             <div class="clear"></div>
                         </ul>
                     </div>	

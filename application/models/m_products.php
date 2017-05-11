@@ -16,26 +16,24 @@ class m_Products extends Database{
     }
     
     function docSanPhamTheoLoai($id, $start = -1, $limit = -1, $random = false){       
-        $sql = "SELECT ProID, ProName, Price, Promotion, Images_list, products.Link, Categories.CatID FROM Products, Categories, SubCategories WHERE products.SubCatID = subcategories.SubCatID AND subcategories.CatID = categories.CatID AND subcategories.SubCatID = 9";
+        $sql = "SELECT ProID, ProName, Price, Promotion, Images_list, Image_thumb, products.Link, Categories.CatID FROM Products, Categories, SubCategories WHERE products.SubCatID = subcategories.SubCatID AND subcategories.CatID = categories.CatID AND Categories.CatID = (SELECT  cat.CatID FROM  categories as cat, subcategories as subcat WHERE cat.CatID = subcat.CatID and subcat.SubCatID = $id)";
         
         if($random == true){
             $sql .= " ORDER BY RAND()";
         }
         if($start >= 0 && $limit > 0){
-            $sql .= "LIMIT $start, $limit";
+            $sql .= " LIMIT $start, $limit";
         }
-       
         return $this->SelectAll($sql); 
     }
     function docSanPhamTheoNhom($id, $start = -1, $limit = -1, $random = false){
-        $sql = "SELECT ProID, ProName, Price, Promotion, Images_list, products.Link FROM Products, SubCategories WHERE Products.SubCatID = SubCategories.SubCatID AND subcategories.SubCatID = $id";
+        $sql = "SELECT ProID, ProName, Price, Promotion, Images_list, Image_thumb, products.Link FROM Products, SubCategories WHERE Products.SubCatID = SubCategories.SubCatID AND subcategories.SubCatID = $id";
         if($random == true){
             $sql .= " ORDER BY RAND()";
         }
         if($start >= 0 && $limit > 0){
-            $sql .= "LIMIT $start, $limit";
+            $sql .= " LIMIT $start, $limit";
         }
-        
         return $this->SelectAll($sql);
     }
     function docDsSanPhamMoi($limit = 0){
