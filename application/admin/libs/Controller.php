@@ -1,7 +1,9 @@
 <?php
+
 class Controller {
 
     public $title, $init, $content;
+
     public function __construct() {
         $this->title = "";
         $this->init = new InitDefaul();
@@ -26,8 +28,17 @@ class Controller {
         }
         return $this->content;
     }
-    function set_title_page($_title){
+
+    function set_title_page($_title) {
         $this->title = $_title;
+    }
+
+    function redirect($url, $permanent = false) {
+        if ($permanent) {
+            header('HTTP/1.1 301 Moved Permanently');
+        }
+        header('Location: ' . $url);
+        exit();
     }
 
 }

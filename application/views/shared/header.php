@@ -68,12 +68,26 @@
                         <a href="index.php"><img src="public/images/logo.png" alt=""/></a>
                     </div>
                     <div class="log_reg">
+                        <?php 
+                        $checkLogin = new Libarary();
+                            if($checkLogin->isAuthenticated()){
+                                ?>
                         <ul>
-                            <li><a href="index.php?con=user&act=login">Login</a> </li>
+                            <li><a href="index.php?con=user&act=viewInfo"><?php echo $_SESSION['user']->FullName ;?></a> </li>
+                        </ul>
+                        <?php
+                            }else{
+                                ?>
+                        <ul>
+                            <li><a href="index.php?con=user&act=login#login">Login</a> </li>
                             <span class="log"> or </span>
-                            <li><a href="index.php?con=user&act=login">Register</a> </li>								   
+                            <li><a href="index.php?con=user&act=login#register">Register</a> </li>								   
                             <div class="clear"></div>
                         </ul>
+                        <?php
+                            }
+                        ?>
+                        
                     </div>	
                     <div class="web_search">
                         <form>

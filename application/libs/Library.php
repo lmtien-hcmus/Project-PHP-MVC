@@ -20,4 +20,12 @@ class Libarary {
         $str = str_replace(" ", "-", str_replace("&*#39;","",$str));
         return $str;
     }
+    function isAuthenticated() {
+        if (isset($_SESSION["auth"]) && $_SESSION["auth"] == 1) {
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }
