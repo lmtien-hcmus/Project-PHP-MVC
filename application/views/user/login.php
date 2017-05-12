@@ -24,12 +24,20 @@ $userInfo = $data;
                 </div>
             </div>
             <div class="login_left">
+                <a name="login"></a>
                 <h3>Đăng nhập</h3>
                 <?php
                 if (isset($_POST['btnLogin']) && $userInfo == null) {
                     ?>
                     <div class = "alert alert-danger" role = "alert">
                         <strong>Error!</strong> Username hoặc password không hợp lệ.
+                    </div>
+                    <?php
+                }
+                if (isset($_GET['receive'])) {
+                    ?>
+                    <div class = "alert alert-success" role = "alert">
+                        <strong>Success!</strong> Đăng ký thành công, vui lòng đăng nhập
                     </div>
                     <?php
                 }

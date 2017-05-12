@@ -1,3 +1,4 @@
+<?php var_dump($data);?>
 <div class="top_bg">
     <div class="wrap">
         <div class="main_top">
@@ -10,6 +11,7 @@
     <div class="wrap">
         <div class="main">
             <div class="login_left">
+                <a name="register"></a>
                 <h3>Dăng nhập</h3>
                 <p>Nếu bạn có tài khoản, vui lòng đăng nhập.</p>
                 <!-- start registration -->
@@ -88,6 +90,15 @@
             </div>
             <div class="login_left">
                 <h3>Tạo tài khoản mới</h3>
+                <?php
+                if (isset($_POST['btnRegister']) && $data == null) {
+                    ?>
+                    <div class = "alert alert-danger" role = "alert">
+                        <strong>Error!</strong> Username hoặc Email đã tồn tại.
+                    </div>
+                    <?php
+                }
+                ?>
                 <p>Với tài khoản được tạo bạn có thể thanh toán mua hàng nhanh, quản lý đơn hàng, giỏ hàng, lưu trữ thông tin và nhiều hơn nữa.</p>
                 <div class="registration_left">
                     
@@ -106,8 +117,8 @@
                             </div>
                             <div class="sky_form">
                                 <ul>
-                                    <li><label class="radio left"><input type="radio" name="rdSex" checked=""><i>Nam</i></label></li>
-                                    <li><label class="radio"><input type="radio" name="rdSex"><i>Nữ</i></label></li>
+                                    <li><label class="radio left"><input type="radio" name="rdSex" value="1" checked=""><i>Nam</i></label></li>
+                                    <li><label class="radio"><input type="radio" name="rdSex" value="0"><i>Nữ</i></label></li>
                                 </ul>
                             </div>
                             <div>
@@ -141,7 +152,7 @@
                                 </label>
                             </div>
                             <div>
-                                <input type="submit" value="Đăng ký" id="register-submit">
+                                <input type="submit" value="Đăng ký" id="btnRegister" name="btnRegister">
                             </div>
                         </form>
                         <!-- /Form -->

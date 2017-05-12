@@ -81,7 +81,7 @@
                         <ul>
                             <li><a href="index.php?con=user&act=login#login">Login</a> </li>
                             <span class="log"> or </span>
-                            <li><a href="index.php?con=user&act=login#register">Register</a> </li>								   
+                            <li><a href="index.php?con=user&act=register#register">Register</a> </li>								   
                             <div class="clear"></div>
                         </ul>
                         <?php

@@ -3,7 +3,7 @@
 class m_Products extends Database{
     
     function docTatCaSanPham($start = -1, $limit = -1){
-        $sql = "SELECT * FROM Products";
+        $sql = "SELECT * FROM Products ORDER BY ProID DESC";
         if($start >= 0 && $limit > 0){
             $sql .= " LIMIT $start, $limit";
         }
@@ -15,8 +15,19 @@ class m_Products extends Database{
         return count($this->SelectAll($sql));
     }
     
-    function docSanPhamTheoLoai($id, $start = -1, $limit = -1, $random = false){       
+    function docSanPhamCungLoai($id, $start = -1, $limit = -1, $random = false){       
         $sql = "SELECT ProID, ProName, Price, Promotion, Images_list, Image_thumb, products.Link, Categories.CatID FROM Products, Categories, SubCategories WHERE products.SubCatID = subcategories.SubCatID AND subcategories.CatID = categories.CatID AND Categories.CatID = (SELECT  cat.CatID FROM  categories as cat, subcategories as subcat WHERE cat.CatID = subcat.CatID and subcat.SubCatID = $id)";
+        
+        if($random == true){
+            $sql .= " ORDER BY RAND()";
+        }
+        if($start >= 0 && $limit > 0){
+            $sql .= " LIMIT $start, $limit";
+        }
+        return $this->SelectAll($sql); 
+    }
+    function docSanPhamTheoLoai($id, $start = -1, $limit = -1, $random = false){       
+        $sql = "SELECT ProID, ProName, Price, Promotion, Images_list, Image_thumb, products.Link, Categories.CatID FROM Products, Categories, SubCategories WHERE products.SubCatID = subcategories.SubCatID AND subcategories.CatID = categories.CatID AND Categories.CatID = $id ORDER BY proID DESC";
         
         if($random == true){
             $sql .= " ORDER BY RAND()";

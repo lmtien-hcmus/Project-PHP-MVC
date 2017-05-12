@@ -31,11 +31,23 @@ class user extends Controller {
         if(isset($_POST['btnRegister'])){
             $this->user = new m_Users();
             $this->user->fullName = $_POST['firstName'] . ' ' . $_POST['lastName'];
-            $this->user->username = $_POST['username'];
+            $this->user->username = $_POST['txtUsername'];
             $this->user->password = md5($_POST['txtPassword']);
             $this->user->email = $_POST['txtEmail'];
-            
+            $this->user->address = $_POST['txtAddress'];
+            $this->user->phone = $_POST['txtPhone'];
+            $this->user->sex = $_POST['rdSex'];
+            if($this->user->sex === 1){
+                $this->user->sex = 'Nam';
+            }
+            else{
+                $this->user->sex = 'Nữ';
+            }
+            $this->data = $this->user->themMotUserMoi();
+            if($this->data != null){
+                $this->redirect('index.php?con=user&act=login&receive=1#login');
+            }
         }
-        return $this->View("register");
+        return $this->View("register", $this->data);
     }
 }

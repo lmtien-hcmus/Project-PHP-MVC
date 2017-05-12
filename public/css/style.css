@@ -2340,3 +2340,9 @@ span.color7{
 .alert strong{
     font-weight: bold;
 }
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    font-size: 14px;
+}

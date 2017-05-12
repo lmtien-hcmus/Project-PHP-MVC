@@ -69,7 +69,7 @@ class products extends Controller {
     }
     function hienThiSanPhamCungLoai($id){
         $this->sanPham = new m_Products();
-        $sanPhamCungLoai = $this->sanPham->docSanPhamTheoLoai($id, 0, 4, true);
+        $sanPhamCungLoai = $this->sanPham->docSanPhamCungLoai($id, 0, 4, true);
         return $sanPhamCungLoai;
     }
     function hienThiSanPhamCungNhom($id){

@@ -22,6 +22,12 @@ class m_Users extends Database{
         return $user;
     }
     function themMotUserMoi(){
-        
+        $checkExist = "SELECT ID FROM USERS WHERE USERNAME = '$this->username' or Email = '$this->email'";
+        $result = $this->Select_Row($checkExist);
+        if($result != null){
+            return null;
+        }
+        $sql = "INSERT INTO USERS(username, password, email, fullname, address, phone, sex, level) VALUE('$this->username', '$this->password', '$this->email', '$this->fullName', '$this->address', '$this->phone', '$this->sex', 0)";
+        return $this->Insert($sql);
     }
 }

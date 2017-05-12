@@ -5,10 +5,7 @@
         <group>
             <file>file:/C:/wamp64/www/Project-PHP-MVC/application/controllers/user.php</file>
             <file>file:/C:/wamp64/www/Project-PHP-MVC/application/models/m_users.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/libs/Controller.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/index.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/libs/Library.php</file>
-            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/shared/header.php</file>
+            <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/user/register.php</file>
             <file>file:/C:/wamp64/www/Project-PHP-MVC/application/views/user/login.php</file>
         </group>
     </open-files>
