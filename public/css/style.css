@@ -2346,3 +2346,75 @@ span.color7{
     border-color: #d6e9c6;
     font-size: 14px;
 }
+.info-cart{
+    margin-top: 50px;
+
+}
+.detail-box{
+    padding: 10px 15px;
+    border-top: 2px solid #3fb4fb;
+    border-bottom: 1px solid #CCC;
+    margin: auto;
+    width: 88%;
+}
+.detail-box span{
+    font-size: 19px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.banggiohang{
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        text-align: center;
+        width: 90%;
+        margin: auto;
+}
+.banggiohang strong{
+    font-weight: bold;
+}
+.banggiohang th{
+    width: 200px;
+    height: 40px;
+    background: #08f;
+    font-weight: 600;
+    color: #fff;
+    line-height: 40px;
+}
+.banggiohang tr{
+    border-bottom: 1px solid #ccc;
+
+}
+.banggiohang td{
+    padding: 5px;
+}
+.banggiohang td #proname{
+    display: block;
+    color: #c70000;
+}
+.banggiohang td img{
+    width: 80px;
+    height: 120px;
+}
+.banggiohang #btnBack, .banggiohang #btnThanhToan{
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+.banggiohang #btnBack{
+    border: none;
+    background: #EB525D;
+
+}
+.banggiohang #btnThanhToan{
+    border: none;
+    background: #090;
+}
+.banggiohang #btnXoa{
+    border:none;
+    padding: 5px;
+    background: #EB525D;
+    color:#fff;
+    border-radius: 3px;
+    cursor:pointer;
+}

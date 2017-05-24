@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <link href='http://fonts.googleapis.com/css?family=Maven+Pro:400,900,700,500' rel='stylesheet' type='text/css'>
+        <link href="public/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
         <link href="public/css/style.css" rel="stylesheet" type="text/css" media="all" />
         <script src="public/js/jquery.min.js" type="text/javascript"></script>
         <!-- start details -->

@@ -40,6 +40,16 @@ class Controller {
         header('Location: ' . $url);
         exit();
     }
+    function demGioHang() {
+        if (!isset($_SESSION["cart"])) {
+            $_SESSION["cart"] = array();
+        }
 
+        $sum = 0;
+        foreach ($_SESSION["cart"] as $id => $soluong) {
+            $sum += $soluong;
+        }
+        return $sum;
+    }
 
 }

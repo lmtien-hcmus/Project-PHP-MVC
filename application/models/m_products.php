@@ -71,5 +71,14 @@ class m_Products extends Database{
         $sql = "SELECT * FROM Products WHERE ProID = $id";
         return $this->Select_Row($sql);
     }
+    function capNhatLuotXem($view){
+        $sql = "UPDATE products set View = $view";
+        
+    }
+    function docSanPhamTheoDsId($listID){
+        $sql = "select ProID, ProName, TinyDes, FullDes, Image_thumb, Price, Promotion from products where ProID in ($listID)";
+        return $this->SelectAll($sql);
+    }
+    
 }
 

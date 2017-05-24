@@ -2,6 +2,7 @@
 require 'application/models/m_products.php';
 class home extends Controller
 {  
+    public $totalcart;
     function index(){
         $products = new m_Products();
         $sanphammoi = $products->DocDsSanPhamMoi(6);

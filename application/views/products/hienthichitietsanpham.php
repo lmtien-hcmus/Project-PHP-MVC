@@ -117,8 +117,8 @@ if ($data) {
 
                             <div class="available">
                                 <div class="btn_form">
-                                    <form>
-                                        <input type="submit" value="mua hàng" title="" />
+                                    <form method="post" name="frmAddcart">                                       
+                                        <input type="submit" value="mua hàng" name="btnAddcart" title="" />
                                     </form>
                                 </div>
                                 <span><a href="#">Đăng nhập để giao dịch</a></span>

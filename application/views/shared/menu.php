@@ -1,11 +1,11 @@
 <?php
     require 'application/models/m_categories.php';
     require 'application/models/m_subcategories.php';
-
     $category = new m_Categories();
     $dschuyenmuc = $category->docDsChuyenMuc();
 
     $subcat = new m_Subcategories();
+    
 ?>
 <div class="wrap">
     <div class="header_btm">
@@ -75,7 +75,7 @@
         <div class="header_right">
             <ul>
                 <li><a href="#"><i  class="art"></i><span class="color1">30</span></a></li>
-                <li><a href="#"><i  class="cart"></i><span>0</span></a></li>
+                <li><a href="index.php?con=cart&act=xemGioHang"><i  class="cart"></i><span><?php echo $this->demGioHang() ;?></span></a></li>
             </ul>
         </div>
         <div class="clear"></div>
